@@ -7,7 +7,7 @@ import HeaderLogo from "../assets/header-logo.svg";
 import CatalogImg from "../assets/catalog.svg";
 import ProfileImg from "../assets/profile.svg";
 import LikedImg from "../assets/Liked.svg";
-import CartImg from "../assets/cart.svg";
+import CartImg from "../assets/Cart.svg";
 import UnionSvg from "../assets/union.svg";
 
 const Header = () => {
