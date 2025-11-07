@@ -1,0 +1,82 @@
+import { OrbitProgress } from "react-loading-indicators";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+import MainBanner from "../assets/main-banner.svg";
+import SecondBanner from "../assets/second-banner.jpg";
+import ThirdBanner from "../assets/third-banner.jpg";
+import Banner4 from "../assets/4banner.jpg";
+
+import useFetch from "../hooks/useFetch";
+import Card from "../components/Card";
+
+const banners = [MainBanner, SecondBanner, ThirdBanner, Banner4];
+
+const HomePage = () => {
+  const { data, isLoading, error } = useFetch("https://dummyjson.com/products");
+
+  console.log(isLoading, data, error);
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <OrbitProgress
+          color="rgb(104, 0, 174)"
+          size="large"
+          text="SABR..."
+          textColor="rgb(104, 0, 174)"
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <main>
+      <div className="container">
+        <div className="ad-banner">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation={true}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop={true}
+            className="mySwiper"
+          >
+            {banners.map((banner, index) => (
+              <SwiperSlide key={index}>
+                <img src={banner} alt={`Banner ${index + 1}`} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <div className="sale-products">
+          <a href="#">
+            Arzon narxlar
+            <i className="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div className="products">
+          {data?.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default HomePage;
