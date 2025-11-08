@@ -1,6 +1,8 @@
 import { OrbitProgress } from "react-loading-indicators";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -40,7 +42,11 @@ const HomePage = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="error-message container">
+        ❌ Xatolik yuz berdi: {error}
+      </div>
+    );
   }
 
   return (
@@ -74,6 +80,21 @@ const HomePage = () => {
             <Card key={product.id} product={product} />
           ))}
         </div>
+
+        <div className="more-products">
+          <button>Yana koʻrsatish 20</button>
+        </div>
+
+        <a className="back-to-top" href="#">
+          <i
+            className="fa-solid fa-arrow-up scroll-top"
+            style={{
+              top: "90%",
+              right: "50px",
+              fontSize: "1rem",
+            }}
+          ></i>
+        </a>
       </div>
     </main>
   );

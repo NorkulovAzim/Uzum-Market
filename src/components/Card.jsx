@@ -1,4 +1,6 @@
 import useAppContext from "../hooks/useAppContext";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Card = ({ product }) => {
   const { setCart, cart } = useAppContext();
@@ -23,17 +25,23 @@ const Card = ({ product }) => {
 
   return (
     <div className="card">
-      <img src={product.thumbnail} alt={product.title} />
+      {product.thumbnail ? (
+        <img src={product.thumbnail} alt={product.title} />
+      ) : (
+        <Skeleton height={150} width={200} />
+      )}
+
       <div className="card-info">
         <p className="price">${product.discountPercentage}</p>
         <p className="discount">${product.price}</p>
-        <h3>{product.title}</h3>
+        <h3>{product.title || <Skeleton width={100} />}</h3>
 
         <div className="card-bottom">
           <p className="rating">
-            <i className="fa-solid fa-star"></i> {product.rating}
+            <i className="fa-solid fa-star"></i>{" "}
+            {product.rating || <Skeleton width={50} />}
           </p>
-          <p>({product.stock} sharhlar)</p>
+          <p>({product.stock || <Skeleton width={30} />} sharhlar)</p>
         </div>
 
         {!InCart && (
