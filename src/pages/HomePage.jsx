@@ -1,6 +1,7 @@
 import { OrbitProgress } from "react-loading-indicators";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import { useMemo } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 
 import "swiper/css";
@@ -13,6 +14,7 @@ import Banner4 from "../assets/4banner.jpg";
 
 import useFetch from "../hooks/useFetch";
 import Card from "../components/Card";
+import useAppContext from "../hooks/useAppContext";
 
 const banners = [MainBanner, SecondBanner, ThirdBanner, Banner4];
 
@@ -20,6 +22,16 @@ const HomePage = () => {
   const { data, isLoading, error } = useFetch("https://dummyjson.com/products");
 
   console.log(isLoading, data, error);
+
+  const { cart } = useAppContext();
+
+  const TotalPrice = useMemo(() => {
+    const total = cart.reduce((acc, currVal) => {
+      acc += currVal.count * currVal.price;
+      return acc;
+    }, 0);
+    return total;
+  }, [cart]);
 
   if (isLoading) {
     return (
@@ -52,6 +64,9 @@ const HomePage = () => {
   return (
     <main>
       <div className="container">
+        <div className="total-price">
+          <p>To'lov uchun: $ {TotalPrice}</p>
+        </div>
         <div className="ad-banner">
           <Swiper
             modules={[Navigation, Autoplay]}
