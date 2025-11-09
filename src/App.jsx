@@ -4,6 +4,7 @@ import { Routes } from "react-router-dom";
 import { Context } from "./context";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
+import CartPage from "./pages/CartPage";
 import "./App.css";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
     </Context.Provider>

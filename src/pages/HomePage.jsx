@@ -1,7 +1,8 @@
 import { OrbitProgress } from "react-loading-indicators";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import { useMemo } from "react";
+// import { useMemo } from "react";
+
 import "react-loading-skeleton/dist/skeleton.css";
 
 import "swiper/css";
@@ -14,24 +15,28 @@ import Banner4 from "../assets/4banner.jpg";
 
 import useFetch from "../hooks/useFetch";
 import Card from "../components/Card";
-import useAppContext from "../hooks/useAppContext";
+// import useAppContext from "../hooks/useAppContext";
+
+import { useTranslation } from "react-i18next";
 
 const banners = [MainBanner, SecondBanner, ThirdBanner, Banner4];
 
 const HomePage = () => {
+  const { t } = useTranslation();
+
   const { data, isLoading, error } = useFetch("https://dummyjson.com/products");
 
   console.log(isLoading, data, error);
 
-  const { cart } = useAppContext();
+  // const { cart } = useAppContext();
 
-  const TotalPrice = useMemo(() => {
-    const total = cart.reduce((acc, currVal) => {
-      acc += currVal.count * currVal.price;
-      return acc;
-    }, 0);
-    return total;
-  }, [cart]);
+  // const TotalPrice = useMemo(() => {
+  //   const total = cart.reduce((acc, currVal) => {
+  //     acc += currVal.count * currVal.price;
+  //     return acc;
+  //   }, 0);
+  //   return total;
+  // }, [cart]);
 
   if (isLoading) {
     return (
@@ -56,7 +61,7 @@ const HomePage = () => {
   if (error) {
     return (
       <div className="error-message container">
-        ❌ Xatolik yuz berdi: {error}
+        ❌ {t("hero.error")}: {error}
       </div>
     );
   }
@@ -64,9 +69,9 @@ const HomePage = () => {
   return (
     <main>
       <div className="container">
-        <div className="total-price">
+        {/* <div className="total-price">
           <p>To'lov uchun: $ {TotalPrice}</p>
-        </div>
+        </div> */}
         <div className="ad-banner">
           <Swiper
             modules={[Navigation, Autoplay]}
@@ -85,7 +90,7 @@ const HomePage = () => {
 
         <div className="sale-products">
           <a href="#">
-            Arzon narxlar
+            {t("hero.cheapProducts")}
             <i className="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -97,7 +102,7 @@ const HomePage = () => {
         </div>
 
         <div className="more-products">
-          <button>Yana koʻrsatish 20</button>
+          <button>{t("hero.showMore")}</button>
         </div>
 
         <a className="back-to-top" href="#">

@@ -2,7 +2,10 @@ import useAppContext from "../hooks/useAppContext";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import { useTranslation } from "react-i18next";
+
 const Card = ({ product }) => {
+  const { t } = useTranslation();
   const { setCart, cart } = useAppContext();
   const InCart = cart.find((p) => p.id === product.id);
 
@@ -41,12 +44,14 @@ const Card = ({ product }) => {
             <i className="fa-solid fa-star"></i>{" "}
             {product.rating || <Skeleton width={50} />}
           </p>
-          <p>({product.stock || <Skeleton width={30} />} sharhlar)</p>
+          <p>
+            ({product.stock || <Skeleton width={30} />} {t("cards.comments")})
+          </p>
         </div>
 
         {!InCart && (
           <button onClick={handleAddToCart} className="add-to-cart">
-            <i className="fa-solid fa-bag-shopping"></i> Ertaga
+            <i className="fa-solid fa-bag-shopping"></i> {t("cards.tomorrow")}
           </button>
         )}
 

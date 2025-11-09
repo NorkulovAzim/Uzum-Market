@@ -1,0 +1,51 @@
+{
+  "header": {
+    "city": "Shahar",
+    "order": "Buyurtmangizni 1 kunda bepul yetkazib beramiz!",
+    "faq": "Savol-javoblar",
+    "myOrder": "Buyurtmalarim"
+  },
+  "headerBottom": {
+    "catalog": "Katalog",
+    "inputSearch": "Mahsulotlar va turkumlar izlash",
+    "LogIn": "Kirish",
+    "liked": "Saralangan",
+    "cart": "Savat"
+  },
+  "headerNav": {
+    "payment": "Muddatli to'lov",
+    "electronics": "Elektronika",
+    "household": "Maishiy texnika",
+    "clothes": "Kiyim",
+    "shoes": "Poyabzallar",
+    "accessories": "Aksessuarlar",
+    "beauty": "Goʻzallik va parvarish",
+    "health": "Salomatlik",
+    "homeNeeds": "Uy-roʻzgʻor buyumlari",
+    "construction": "Qurilish va taʼmirlash"
+  },
+  "hero": {
+    "cheapProducts": "Arzon narxlar",
+    "error": "Xatolik yuz berdi.",
+    "showMore": "Yana koʻrsatish 20"
+  },
+  "cards": {
+    "tomorrow": "Ertaga",
+    "comments": "Sharhlar"
+  },
+  "footer": {
+    "about": "Biz haqimizda",
+    "delivery": "Topshirish punktlari",
+    "vacancies": "Vakansiyalar",
+    "toUsers": "Foydalanuvchilarga",
+    "contactUs": "Biz bilan bogʻlanish",
+    "entrepreneurs": "Tadbirkorlarga",
+    "sellOnUzum": "Uzumda soting",
+    "adminPanel": "Sotuvchi kabinetiga kirish",
+    "application": "Ilovani yuklab olish",
+    "socialMedia": "Uzum ijtimoiy tarmoqlarda",
+    "copyright": "©Maxfiylik kelishuvi",
+    "terms": "Foydalanuvchi kelishuvi",
+    "privacy": "2025© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar himoyalangan"
+  }
+}

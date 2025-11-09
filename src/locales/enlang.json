@@ -1,0 +1,51 @@
+{
+  "header": {
+    "city": "City",
+    "order": "We deliver your order for free in 1 day!",
+    "faq": "FAQs",
+    "myOrder": "My Orders"
+  },
+  "headerBottom": {
+    "catalog": "Catalog",
+    "inputSearch": "Search for products and categories",
+    "LogIn": "Login",
+    "liked": "Liked",
+    "cart": "Cart"
+  },
+  "headerNav": {
+    "payment": "Fixed payment",
+    "electronics": "Electronics",
+    "household": "Home appliances",
+    "clothes": "Clothes",
+    "shoes": "Shoes",
+    "accessories": "Accessories",
+    "beauty": "Beauty",
+    "health": "Health",
+    "homeNeeds": "Household items",
+    "construction": "Construction"
+  },
+  "hero": {
+    "cheapProducts": "Cheap prices",
+    "error": "An error occurred.",
+    "showMore": "Show more 20"
+  },
+  "cards": {
+    "tomorrow": "Order now",
+    "comments": "Comments"
+  },
+  "footer": {
+    "about": "About us",
+    "delivery": "Delivery points",
+    "vacancies": "Vacancies",
+    "toUsers": "To users",
+    "contactUs": "Contact us",
+    "entrepreneurs": "For entrepreneurs",
+    "sellOnUzum": "Sell on Uzum",
+    "adminPanel": "Login to cabinet",
+    "application": "Download the app",
+    "socialMedia": "Uzum social media",
+    "copyright": "©Confidentiality agreement",
+    "terms": "User Agreement",
+    "privacy": "2025© XK MCHJ «UZUM MARKET». STIR 309376127. All rights reserved"
+  }
+}
