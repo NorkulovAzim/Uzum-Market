@@ -47,5 +47,17 @@
     "copyright": "©Maxfiylik kelishuvi",
     "terms": "Foydalanuvchi kelishuvi",
     "privacy": "2025© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar himoyalangan"
+  },
+  "cart": {
+    "yourCart": "Savatingiz",
+    "yourProduct": "mahsulot",
+    "emptyCart": "Savat bo'sh",
+    "quantity": "Mahsulot soni",
+    "yourOrder": "Buyurtmangiz",
+    "allProducts": "Mahsulot(lar)",
+    "ta": "ta",
+    "noDiscount": "Chegirmasiz narxi",
+    "total": "Jami",
+    "pay": "Rasmiylashtirishga o'tish"
   }
 }

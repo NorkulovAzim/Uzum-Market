@@ -1,7 +1,10 @@
 import React, { useMemo } from "react";
 import useAppContext from "../hooks/useAppContext";
+import { useTranslation } from "react-i18next";
 
 const CartPage = () => {
+  const { t } = useTranslation();
+
   const { cart, setCart } = useAppContext();
 
   const handleIncrement = (id) => {
@@ -40,14 +43,18 @@ const CartPage = () => {
       <div className="container">
         <div className="cart-title">
           <h2>
-            Savatingiz, <span>{totalProducts} mahsulot</span>
+            {t("cart.yourCart")},{" "}
+            <span>
+              {totalProducts} {t("cart.yourProduct")}
+            </span>
           </h2>
         </div>
 
         <div className="cart-content">
           {cart.length === 0 ? (
             <p className="cart-empty">
-              <i className="fa-solid fa-cart-shopping"></i> Savat bo'sh :)
+              <i className="fa-solid fa-cart-shopping"></i>{" "}
+              {t("cart.emptyCart")} :(
             </p>
           ) : (
             <div className="cart-wrap">
@@ -56,8 +63,10 @@ const CartPage = () => {
                   <img src={item.thumbnail} alt={item.title} />
                   <div className="cart-info">
                     <p>{item.title}</p>
-                    <p>Narxi: ${item.price}</p>
-                    <p>Soni: {item.count}</p>
+                    <p>${item.price}</p>
+                    <p>
+                      {t("cart.quantity")}: {item.count}
+                    </p>
                   </div>
                   <div className="cart-count">
                     <button onClick={() => handleDecrement(item.id)}>-</button>
@@ -70,16 +79,20 @@ const CartPage = () => {
           )}
 
           <div className="cart-total">
-            <h3>Buyurtmangiz</h3>
-            <p>Mahsulot(lar): {totalProducts}</p>
+            <h3>{t("cart.yourOrder")}</h3>
+            <p className="products-total">
+              {t("cart.allProducts")}: {totalProducts} {t("cart.ta")}
+            </p>
             <div className="cart-total-item">
               <p>
-                Mahsulot narxi:{" "}
+                {t("cart.noDiscount")}:{" "}
                 <span className="old-price">${totalOldPrice}</span>
               </p>
-              <p>Jami: ${totalPrice}</p>
+              <p>
+                {t("cart.total")}: ${totalPrice}
+              </p>
             </div>
-            <button>Rasmiylashtirishga o'tish</button>
+            <button>{t("cart.pay")}</button>
           </div>
         </div>
       </div>

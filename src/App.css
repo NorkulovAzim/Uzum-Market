@@ -616,6 +616,27 @@ footer {
 .cart-info {
   flex: 0.6;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cart-info p:first-child {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 17px;
+}
+
+.cart-info p:nth-child(2) {
+  color: #7000ff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-info p:last-child {
+  font-size: 14px;
+  color: #999;
 }
 
 .cart-item p {
@@ -640,9 +661,9 @@ footer {
 
 .cart-total {
   margin-top: 40px;
-  height: 20rem;
+  height: 25rem;
   width: 40%;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: transparent;
   border-radius: 10px;
   display: flex;
@@ -653,6 +674,24 @@ footer {
   font-size: 1.2rem;
   gap: 20px;
   border: 1px solid #e0e0e0;
+}
+
+.cart-total h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.products-total {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cart-total-item {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-direction: column;
 }
 
 .cart-total button {

@@ -47,5 +47,17 @@
     "copyright": "©Confidentiality agreement",
     "terms": "User Agreement",
     "privacy": "2025© XK MCHJ «UZUM MARKET». STIR 309376127. All rights reserved"
+  },
+  "cart": {
+    "yourCart": "Your Cart",
+    "yourProduct": "product(s)",
+    "emptyCart": "Cart is empty",
+    "quantity": "Quantity of product(s)",
+    "yourOrder": "Your order",
+    "allProducts": "Product(s)",
+    "ta": "",
+    "noDiscount": "Without discount",
+    "total": "Total",
+    "pay": "Proceed to payment"
   }
 }
