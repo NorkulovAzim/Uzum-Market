@@ -46,7 +46,9 @@ const CartPage = () => {
 
         <div className="cart-content">
           {cart.length === 0 ? (
-            <p>Savat bo'sh</p>
+            <p className="cart-empty">
+              <i className="fa-solid fa-cart-shopping"></i> Savat bo'sh :)
+            </p>
           ) : (
             <div className="cart-wrap">
               {cart.map((item) => (

@@ -657,7 +657,7 @@ footer {
 
 .cart-total button {
   margin: 0 auto;
-  padding: 10px 50px;
+  padding: 15px 50px;
   background-color: #7000ff;
   color: white;
   border-radius: 8px;
@@ -665,6 +665,9 @@ footer {
   border: none;
   cursor: pointer;
   margin-top: 70px;
+  width: 80%;
+  height: 45px;
+  font-size: 18px;
 }
 
 .old-price {
@@ -700,4 +703,14 @@ footer {
   font-size: 1.1rem;
   font-weight: 600;
   padding: 5px 10px;
+}
+
+.cart-empty {
+  background-color: #7000ff;
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 50px auto;
 }
