@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import "../src/locales/uzlang.json";
 
-import en from "../src/locales/Enlang.json";
+import en from "../src/locales/enlang.json";
 import uz from "../src/locales/uzlang.json";
 
 const resources = {
