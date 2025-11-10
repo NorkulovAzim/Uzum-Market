@@ -43,7 +43,7 @@ const Header = () => {
               {t("header.city")} <a href="#">Toshkent</a>
             </p>
             <div className="order-place">
-              <a href="#">Topshirish punktlari</a>
+              <a href="#">{t("header.deliveryPoint")}</a>
             </div>
           </div>
 

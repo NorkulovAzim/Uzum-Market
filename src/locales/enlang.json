@@ -3,7 +3,8 @@
     "city": "City",
     "order": "We deliver your order for free in 1 day!",
     "faq": "FAQs",
-    "myOrder": "My Orders"
+    "myOrder": "My Orders",
+    "deliveryPoint": "Delivery points"
   },
   "headerBottom": {
     "catalog": "Catalog",

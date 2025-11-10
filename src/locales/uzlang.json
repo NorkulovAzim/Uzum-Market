@@ -3,7 +3,8 @@
     "city": "Shahar",
     "order": "Buyurtmangizni 1 kunda bepul yetkazib beramiz!",
     "faq": "Savol-javoblar",
-    "myOrder": "Buyurtmalarim"
+    "myOrder": "Buyurtmalarim",
+    "deliveryPoint": "Topshirish punktlari"
   },
   "headerBottom": {
     "catalog": "Katalog",
