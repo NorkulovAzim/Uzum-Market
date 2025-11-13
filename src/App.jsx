@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import "./App.css";
+import DetailedPage from "./pages/DetailedPage";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -15,6 +16,7 @@ const App = () => {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/detailed" element={<DetailedPage />} />
         </Route>
       </Routes>
     </Context.Provider>

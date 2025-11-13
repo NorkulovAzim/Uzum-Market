@@ -60,5 +60,17 @@
     "noDiscount": "Chegirmasiz narxi",
     "total": "Jami",
     "pay": "Rasmiylashtirishga o'tish"
+  },
+  "detailed": {
+    "loading": "Mahsulot ma'lumotlari yuklanmoqda...",
+    "inStock": "donasi bor",
+    "addToCart": "Savatga qo'shish",
+    "comments": "Sharhlar",
+    "withoutuzum": "Uzum kartasiz",
+    "month": "oy",
+    "buyonclick": "1 klikda sotib olish",
+    "lastone": "Oxirgisi qoldi !",
+    "thisweek": "Bu hafta",
+    "boughtperson": "kishi sotib oldi"
   }
 }

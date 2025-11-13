@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import useAppContext from "../hooks/useAppContext";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -6,6 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const Card = ({ product }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { setCart, cart } = useAppContext();
   const InCart = cart.find((p) => p.id === product.id);
 
@@ -26,43 +28,49 @@ const Card = ({ product }) => {
     setCart(updatedCart);
   };
 
+  const handleViewDetails = () => {
+    navigate("/detailed", { state: { product } });
+  };
+
   return (
     <div className="card">
-      {product.thumbnail ? (
-        <img src={product.thumbnail} alt={product.title} />
-      ) : (
-        <Skeleton height={150} width={200} />
+      <div onClick={handleViewDetails} style={{ cursor: "pointer" }}>
+        {product.thumbnail ? (
+          <img src={product.thumbnail} alt={product.title} />
+        ) : (
+          <Skeleton height={150} width={200} />
+        )}
+
+        <div className="card-info">
+          <p className="price">${product.discountPercentage}</p>
+          <p className="discount">${product.price}</p>
+          <h3>{product.title || <Skeleton width={100} />}</h3>
+
+          <div className="card-bottom">
+            <p className="rating">
+              <i className="fa-solid fa-star"></i>{" "}
+              {product.rating || <Skeleton width={50} />}
+            </p>
+            <p>
+              ({product.stock || <Skeleton width={30} />} {t("cards.comments")})
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {!InCart && (
+        <button onClick={handleAddToCart} className="add-to-cart">
+          <i className="fa-solid fa-bag-shopping"></i> {t("cards.tomorrow")}
+        </button>
       )}
 
-      <div className="card-info">
-        <p className="price">${product.discountPercentage}</p>
-        <p className="discount">${product.price}</p>
-        <h3>{product.title || <Skeleton width={100} />}</h3>
-
-        <div className="card-bottom">
-          <p className="rating">
-            <i className="fa-solid fa-star"></i>{" "}
-            {product.rating || <Skeleton width={50} />}
-          </p>
-          <p>
-            ({product.stock || <Skeleton width={30} />} {t("cards.comments")})
-          </p>
-        </div>
-
-        {!InCart && (
-          <button onClick={handleAddToCart} className="add-to-cart">
-            <i className="fa-solid fa-bag-shopping"></i> {t("cards.tomorrow")}
-          </button>
-        )}
-
-        {InCart && (
-          <div className="incart">
-            <button onClick={handleDecrement}>-</button>
-            <span>{InCart.count}</span>
-            <button onClick={handleIncrement}>+</button>
-          </div>
-        )}
+      {InCart && (
+        <div className="incart">
+          <button onClick={handleDecrement}>-</button>
+          <span>{InCart.count}</span>
+          <button onClick={handleIncrement}>+</button>
       </div>
+      )}
     </div>
   );
 };

@@ -60,5 +60,17 @@
     "noDiscount": "Without discount",
     "total": "Total",
     "pay": "Proceed to payment"
+  },
+  "detailed": {
+    "loading": "Loading product details...",
+    "inStock": "comments",
+    "addToCart": "Add to cart",
+    "comments": "Comments",
+    "withoutuzum": "Without Uzum card",
+    "month": "months",
+    "buyonclick": "Buy in 1 click",
+    "lastone": "Only one left !",
+    "thisweek": "This week",
+    "boughtperson": "products were sold"
   }
 }
