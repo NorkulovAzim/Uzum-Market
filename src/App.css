@@ -976,3 +976,7 @@ button {
 .detailed-button-credit {
   padding: 0 20px 0 20px;
 }
+
+.cart-badge {
+  padding: 20px;
+}
